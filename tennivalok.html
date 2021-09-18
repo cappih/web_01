@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <title>WebApp</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: monospace;
+      }
+      body{
+        background: #326771;
+      }
+
+      a{
+        text-decoration: none;
+      }
+      /* width */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #999;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      .wrapper{
+        width: 85%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /*HEADER STUFF*/
+      .header-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 1
+        /*overflow: inherit;*/
+      }
+
+      header{
+        /*background-image: url('imgs/header_01.jpg');
+        background-size: cover;*/
+        background: #326771;
+        display: grid;
+        height: 150px;
+        color: white;
+
+      }
+
+      .button-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 0px;/* WARNING: */
+        /*padding: 5px 5px;*/
+        height: 80px;
+        width: 100%;
+      }
+
+      h1{
+        height: auto;
+        padding: 20px 20px;
+        color: rgb(23, 37, 42);
+      }
+
+      /*animáció teszt*/
+      @keyframes move_up {
+          from {top: -0px;}
+          to {top: -5px;}
+      }
+
+      .mainmenu-button{
+        background: #2C8C99;
+        border: none 2px black;
+        border-radius: 0px;
+        color: rgb(222, 242, 241);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 1000;
+        position:relative;
+        top: 17px;
+        transition: top 0.1s ease-out;
+      }
+      .mainmenu-button:hover{
+        background: #2C8C99;
+        top: 14px;
+
+        /*animation-name: move_up;
+        animation-duration: 0.2s;
+        animation-direction: alternate;*/
+      }
+      .mainmenu-button:active{
+        background: rgb(240, 194, 70);
+      }
+
+      /*BODY STUFF*/
+      .main-body{
+        height: 100%;
+        overflow-y: hidden;
+        background: #2C8C99;
+        /*background-image: url('imgs/background_small_02.jpg');*/
+      }
+
+      ul{
+        padding: 5px 5px;
+        overflow-x: hidden;
+        list-style-type: none;
+        height: 90%;
+      }
+
+      .todo_listitem{
+        height: auto;
+        border: 2px solid #28464B;
+        background: #326771;
+        color: rgb(222, 242, 241);
+        border-radius: 2px;
+        padding: 5px 10px;
+        margin: 5px 0px;;
+        word-wrap: break-word;
+        display: flex;
+        align-items: center;
+      }
+      .todo_listitem:hover{
+        background: rgb(60, 113, 123);
+      }
+
+      .todo_listitem_text{
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        cursor: default;
+        word-wrap: break-word;
+        height: auto;
+      }
+
+      .todo_listitem_del_button{
+        position:inherit;
+        padding: 5px 10px;
+        border-radius: 2px;
+        background: rgb(147, 22, 33);
+        color: white;
+        cursor: pointer;
+      }
+      .todo_listitem_del_button:hover{
+        background: rgb(167, 42, 53);
+
+      }
+
+      .new_item_adder_container{
+        padding: 5px 10px;
+        margin: 5px 5px;;
+        height: 30px;
+        display: grid;
+        grid-template-columns: auto 100px;
+        grid-gap: 5px;
+      }
+
+      .add_input{
+        box-sizing: border-box;
+        padding: 5px;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+      }
+
+      .add_button{
+        display: flex;
+        justify-content: center;
+        background: #28464B;
+        color: white;
+        border-radius: 2px;
+        border: none;
+        padding: 8px;
+      }
+      .add_button:hover{
+        background: rgb(53, 132, 130);
+      }
+      .add_button:active{
+        background: rgb(33, 112, 110);
+      }
+
+      /*
+      rgb(23, 37, 42),
+      rgb(43, 122, 120)
+      rgb(58, 175, 169)
+      rgb(222, 242, 241)
+      rgb(254, 255, 255)
+      */
+    </style>
+
+    <script src="script.js"></script>
+
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header-wrapper">
+          <h1>Főoldal</h1>
+          <div class="button-container">
+            <a href="" class="mainmenu-button">Tennivalók</a>
+            <a href="" class="mainmenu-button">Követhetőség táblázat</a>
+            <a href="" class="mainmenu-button">Emlékeztető</a>
+            <a href="" class="mainmenu-button">...</a>
+            <a href="" class="mainmenu-button">...</a>
+          </div>
+        </div>
+      </header>
+      <div class="main-body">
+
+
+        <div class="new_item_adder_container">
+          <input id="inputfield" class="add_input" type="text" name="" value="">
+          <button class="add_button" type="button" onclick="appendList()">Hozzáad</button>
+          <!--<a class="add_button" href="">Add</a>-->
+        </div>
+
+
+        <ul id="list_container">
+          <li class="todo_listitem">
+            <div class="todo_listitem_text">item #1</div>
+            <a class="todo_listitem_del_button" onclick="removeItem(this.parentNode)">x</a>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+  </body>
+
+</html>
