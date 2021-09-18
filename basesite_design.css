@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: monospace;
+}
+body{
+  /*background: url('imgs/background_big_02.jpg');
+  background-size: cover;*/
+  background: linear-gradient(173deg, rgba(50,103,113,1) 0%, rgba(40,70,75,1) 50%, rgba(50,103,113,1) 100%);
+}
+a{
+  text-decoration: none;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #9f9f9f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.wrapper{
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/*HEADER STUFF*/
+.header-wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1
+  /*overflow: inherit;*/
+}
+
+header{
+  /*background-image: url('imgs/banner_01.jpg');
+  background-size: cover;*/
+  background: rgb(49, 86, 92);/*rgb(50, 103, 113);*/
+  display: grid;
+  height: 150px;
+  color: white;
+
+}
+
+.button-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0px;/* WARNING: */
+  /*padding: 5px 5px;*/
+  height: 80px;
+  width: 100%;
+}
+
+h1{
+  height: auto;
+  padding: 20px 20px;
+  color: rgb(222, 242, 241);
+}
+
+/*animáció teszt*/
+@keyframes move_up {
+    from {top: -0px;}
+    to {top: -5px;}
+}
+
+.mainmenu-button{
+  background: rgb(44, 140, 153);
+  border: none 2px black;
+  border-radius: 0px;
+  color: rgb(222, 242, 241);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 1000;
+  position:relative;
+  top: 17px;
+  transition: top 0.1s ease-out;
+}
+.mainmenu-button:hover{
+  background: rgb(54, 150, 163);
+  top: 14px;
+
+  /*animation-name: move_up;
+  animation-duration: 0.2s;
+  animation-direction: alternate;*/
+}
+.mainmenu-button:active{
+  background: rgb(34, 130, 143);
+}
+
+/*BODY STUFF*/
+.main-body{
+  height: 100%;
+  overflow-y: hidden;
+  background: rgb(44, 140, 153);
+  /*background-image: url('imgs/background_small_02.jpg');*/
+}
