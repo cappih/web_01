@@ -55,7 +55,6 @@ a{
 }
 
 header{
-  /*ez az új kérdőjel gomb miatt van hogy a childjeként lehessen igazítani*/
   position: relative;
 
   background: rgb(49, 86, 92);/*rgb(50, 103, 113);*/
