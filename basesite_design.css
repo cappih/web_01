@@ -56,11 +56,10 @@ a{
 
 header{
   position: relative;
-
   background: rgb(49, 86, 92);/*rgb(50, 103, 113);*/
   display: grid;
   height: 150px;
-  
+
 }
 
 .button-container{
