@@ -11,6 +11,31 @@
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <title>WebApp</title>
     <style media="screen">
+      /* WARNING: TEMP*/
+      strong{
+        height: auto;
+      }
+      .landingpage{
+        position: absolute;
+        font-size: 24px;
+        right: 20px;
+        top: 20px;
+        text-decoration: none;
+        color: rgb(222, 73, 33);
+        border: 2px solid rgb(222, 73, 33);
+        border-radius: 50px;
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s;
+      }.landingpage:hover{
+        background: rgb(222, 73, 33);
+        color: rgb(40, 70, 75);
+      }
+
       ul{
         padding: 5px 5px;
         overflow-x: hidden;
@@ -109,8 +134,11 @@
 
   <body>
     <div class="wrapper">
+
       <header>
+        <a class="landingpage" href="landing_page.html"><strong>?</strong></a>
         <div class="header-wrapper">
+
           <h1>Tennivalók</h1>
           <div class="button-container">
             <a href="" class="mainmenu-button">Tennivalók</a>
@@ -120,6 +148,7 @@
             <a href="" class="mainmenu-button">...</a>
           </div>
         </div>
+
       </header>
       <div class="main-body">
 

@@ -57,11 +57,13 @@ a{
 header{
   /*background-image: url('imgs/banner_01.jpg');
   background-size: cover;*/
+  
+  position: relative; /*ez az új kérdőjel gomb miatt van hogy a childjeként lehessen igazítani*/
+
   background: rgb(49, 86, 92);/*rgb(50, 103, 113);*/
   display: grid;
   height: 150px;
   color: white;
-
 }
 
 .button-container{

@@ -12,12 +12,17 @@
   color: white;
 }
 
-
+#main-logo {
+  width: 100px;
+  height: 80px;
+  padding-left: 30px;
+}
 header{
   background: black;/*rgb(228, 180, 8);*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 ul{
