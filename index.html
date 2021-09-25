@@ -140,41 +140,6 @@
         background-position:right;
       }
     </style>
-
-    <script type="text/javascript">
-      function loginButtonClicked(){
-        if (document.getElementById('idInput').value == "admin" & document.getElementById('passInput').value == "admin") {
-        window.location.href = "tennivalok.html"
-        console.log("true")
-      } else {
-        console.log("false")
-      }
-      }
-
-      function labelFocus(label){
-        if (label == 'l1'){
-          var label = document.getElementById('labelId');
-          label.style.fontSize = '19px';
-          var label2 = document.getElementById('labelPass');
-          label2.style.fontSize = '15px';
-        } else if (label == 'l2'){
-          var label = document.getElementById('labelId');
-          label.style.fontSize = '15px';
-          var label2 = document.getElementById('labelPass');
-          label2.style.fontSize = '19px';
-        }
-      }
-      function labelFocusOut(label){
-        if (label == 'l1'){
-          var label = document.getElementById('labelId');
-          label.style.fontSize = '15px';
-        } else if (label == 'l2'){
-          var label2 = document.getElementById('labelPass');
-          label2.style.fontSize = '15px';
-        }
-
-      }
-    </script>
   </head>
 
   <body>
@@ -185,11 +150,11 @@
       <form class="loginform" action="index.html" method="post">
         <div class="columnviewContainer">
           <label id="labelId" for="idlabel">Id</label>
-          <input id="idInput" class="bigInput" type="text" name="" value="" placeholder="Enter Id" onfocus="labelFocus('l1')" onfocusout="labelFocusOut('l1')">
+          <input id="idInput" class="bigInput" type="text" name="" value="" placeholder="Enter Id">
         </div>
         <div class="columnviewContainer">
           <label id="labelPass" for="passlabel">Pass</label>
-          <input id="passInput" class="bigInput" type="password" name="" value="" placeholder="Enter Password" onfocus="labelFocus('l2')"  onfocusout="labelFocusOut('l2')">
+          <input id="passInput" class="bigInput" type="password" name="" value="" placeholder="Enter Password">
         </div>
         <button class="submitbutton" type="button" name="button" onclick="loginButtonClicked()">Submit</button>
       </form>
@@ -198,4 +163,40 @@
     </div>
   </body>
 
+  <script type="text/javascript">
+    function loginButtonClicked(){
+      if (document.getElementById('idInput').value == "admin" & document.getElementById('passInput').value == "admin") {
+      window.location.href = "tennivalok.html"
+      console.log("true")
+    } else {
+      console.log("false")
+    }
+    }
+    
+    const id_input = document.getElementById('idInput');
+    const pass_input = document.getElementById('passInput');
+    const id_label = document.getElementById('labelId');
+    const pass_label = document.getElementById('labelPass');
+
+    id_input.addEventListener('focusin', resizeLabel);
+    id_input.addEventListener('focusout', resizeLabel);
+    pass_input.addEventListener('focusin', resizeLabel);
+    pass_input.addEventListener('focusout', resizeLabel);
+
+    function resizeLabel(event){
+      var target;
+      if (event.target.id == 'idInput'){
+          target = id_label;
+        } else if (event.target.id == 'passInput'){
+          target = pass_label;
+      }
+
+      if(event.type == 'focusin'){
+        target.style.fontSize = '19px';
+      } else {
+        target.style.fontSize = '15px';
+      }
+    }
+
+  </script>
 </html>
