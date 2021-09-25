@@ -57,8 +57,30 @@
       }
       .columnviewContainer{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
       }
+
+      /*
+      label nagyítás css opció
+
+      viszont fonákul kell ez miatt a HTML tageket rendezni
+      aztán visszafele besorolni a flex-el hogy működjön
+      mert a kombináló jel:~ csak az első elem után következő
+      elemet veszi figyelembe és csak azt lehet módosítani,
+      az előtte levőt nem, hiába vannak ugyan abban a konténerben
+
+      ez hogy egyik elem eventjével más elemet módosítunk
+      csak akkor jó, ha a két TAG egymás gyereke vagy
+      ugyanabban a konténerben vannak msáképp a javascript verzó
+      jobb
+      */
+      .columnviewContainer #idInput:focus ~ #labelId{
+        font-size: 19px;
+      }
+      .columnviewContainer #passInput:focus ~ #labelPass{
+        font-size: 19px;
+      }
+
       .bigInput{
         height: 30px;
         font-weight: bold;
@@ -72,6 +94,7 @@
       .bigInput:focus{
         border-color: rgb(35, 177, 222);
       }
+     
 
       label{
         font-weight: bold;
@@ -81,7 +104,9 @@
         -webkit-transition: 0.1s;
         position:relative;
       }
-
+      /*~*/
+      
+     
       .submitbutton{
         display: block;
         text-decoration: none;
@@ -149,12 +174,12 @@
 
       <form class="loginform" action="index.html" method="post">
         <div class="columnviewContainer">
-          <label id="labelId" for="idlabel">Id</label>
           <input id="idInput" class="bigInput" type="text" name="" value="" placeholder="Enter Id">
+          <label id="labelId" for="idlabel">Id</label>
         </div>
         <div class="columnviewContainer">
-          <label id="labelPass" for="passlabel">Pass</label>
           <input id="passInput" class="bigInput" type="password" name="" value="" placeholder="Enter Password">
+          <label id="labelPass" for="passlabel">Pass</label>
         </div>
         <button class="submitbutton" type="button" name="button" onclick="loginButtonClicked()">Submit</button>
       </form>
@@ -172,8 +197,13 @@
       console.log("false")
     }
     }
-    
-    const id_input = document.getElementById('idInput');
+
+    //label nagyítás js opció
+    /*ez a módszer akkor jobb ha az oldalon teljesen máshol
+    kell valamit módosítani, ha a két TAG egymás gyereke vagy
+    ugyanabban a konténerben vannak akkor a css megoldás egyszerűbb*/
+
+    /*const id_input = document.getElementById('idInput');
     const pass_input = document.getElementById('passInput');
     const id_label = document.getElementById('labelId');
     const pass_label = document.getElementById('labelPass');
@@ -196,7 +226,7 @@
       } else {
         target.style.fontSize = '15px';
       }
-    }
+    }*/
 
   </script>
 </html>
