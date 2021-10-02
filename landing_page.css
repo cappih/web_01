@@ -221,12 +221,12 @@ h2{
   }
 
   .a-container img{
-    width: inherit;
+    width: 100%;
     border-radius: 24px 24px 0 0;
     transform: translateX(0);
   }
 }
-@media only screen and (min-width: 751px) and (max-width: 800px){
+@media only screen and (min-width: 751px) and (max-width: 1000px){
   .a-container{
     width:90%;
     flex-direction: row;
@@ -241,7 +241,6 @@ h2{
   .about-description-container h2{
     font-size: 3rem;
     margin-bottom: 40px;
-    text-indent: -30%;
   }
   .about-description-container p{
     font-size: 1.1rem;
