@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: monospace;
+  box-sizing: border-box;
 }
 
 /* anchor style */
@@ -17,6 +18,7 @@
   height: 80px;
   padding-left: 30px;
 }
+
 header{
   background: black;/*rgb(228, 180, 8);*/
   display: flex;
@@ -27,8 +29,10 @@ header{
   /*topra fixeli a headert*/
   position: fixed;
   width: 100%;
+  max-width: 100%;
   top: 0;
   height:90px;
+  z-index: 1000;
 }
 nav{
   display: flex;
@@ -94,24 +98,32 @@ nav{
   justify-content: flex-start;
 }
 
-
 /*CONTENT SECTION*/
+
 .content{
-  background: #f06236;
+  /*background: #f06236;*/
+  /*background-image: url('imgs/background_big_01.jpg');*/
   width: 100%;
-  height: 100%;
-  margin-top: 90px;
-  display: grid;
+  height: 100vh;
+  /*ha nem akarom hogy a content a header alá csússzon*/
+  /*margin-top: 90px;*/
 }
 
+section {
+  width: 100vh;
+}
+
+/*home section*/
+
 .h-container{
+  margin-top: 400px;
   display: grid;
   /*flex-direction: column;
   justify-content:center;*/
   margin-left: 100px;
-  height: 50%;
   grid-template-rows: 1fr 1fr 6fr;
 }
+
 h1{
   font-weight: bolder;
   font-size: 4rem;
@@ -121,15 +133,97 @@ h1{
   color: #f06236;
   width: fit-content;
 }
+
 h2{
   font-size: 2rem;
   font-family: 'Verdana', Geneva, Tahoma, sans-serif;
 }
+
 .home p{
   margin-top: 40px;
 }
+
 .home{
   display: flex;
   align-items: center;
-  height: 91vh;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(131deg, rgba(240,98,54,1) 40%, rgba(230,135,79,1) 100%);
+}
+
+/*about section*/
+.about{
+  display: flex;
+  width: 100%;
+  
+  background: linear-gradient(131deg, rgb(48, 48, 48) 40%, rgb(141, 141, 141) 100%);
+  justify-content: center;
+  align-items: center;
+  padding: 90px 0px;
+}
+.a-container{
+  position: relative;
+  display: flex;
+  margin: auto;
+  background: #000000c9;
+  border-radius: 24px;
+  width: 80%;
+  color: white;
+}
+.a-container img{
+  width: 500px;
+  border-radius: 24px 0px 0px 24px;
+  transform: translateX(-4px);
+}
+.about-description-container{
+  margin: 20px;
+}
+.about-description-container h2{
+  font-size: 3rem;
+  margin-bottom: 40px;;
+}
+.about-description-container p{
+  font-size: 1.2rem;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  nav{
+    display: none;
+  }
+  /*content*/
+
+  /*home*/
+  .content{
+    width: 360px;
+  }
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 1rem;
+  }
+  .home{
+    width: inherit;
+  }
+  .h-container{
+    margin-left: 0;
+    margin-top: 50px;;
+  }
+
+  /*about*/
+  .about{
+    padding: 10px 5px;;
+  }
+  
+  .a-container{
+    width:100%;
+    flex-direction: column;
+  }
+
+  .a-container img{
+    width: 100%;
+    border-radius: 24px 24px 0 0;
+    transform: translateX(0);
+  }
 }
